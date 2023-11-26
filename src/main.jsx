@@ -8,7 +8,7 @@ import { HelmetProvider } from 'react-helmet-async';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
-    <div className="max-w-screen-2xl mx-auto">
+    <div>
     <RouterProvider router={router} />
     </div>
     </HelmetProvider>

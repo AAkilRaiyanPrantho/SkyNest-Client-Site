@@ -11,7 +11,6 @@ const Home = () => {
             <Helmet>
         <title>SkyNest || Home</title>
       </Helmet>
-            <h2>This is HOME</h2>
             <Banner></Banner>
             <Headings mainHeading={'Flash Deals'} subHeading={'Get the best deals'}></Headings>
             <Coupons></Coupons>
