@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
+import Headings from "../../Shared/Headings/Headings";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       </Helmet>
             <h2>This is HOME</h2>
             <Banner></Banner>
+            <Headings mainHeading={'About'} subHeading={'Know about our building'}></Headings>
         </div>
     );
 };
