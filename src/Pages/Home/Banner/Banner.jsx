@@ -1,7 +1,14 @@
-import Slider from "react-slick";
+// import { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+
 
 import banner1 from '../../../../assets/Banner Images (1).jpg'
 import banner2 from '../../../../assets/Banner Images (2).jpg'
@@ -14,43 +21,52 @@ import banner8 from '../../../../assets/Banner Images (8).jpg'
 import banner9 from '../../../../assets/Banner Images (9).jpg'
 
 const Banner = () => {
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear'
-  };
+
+    
   return (
-    <Slider {...settings}>
-      <div>
+    <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+      <SwiperSlide>
         <img className="w-full h-[800px]" src={banner1} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner2} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner3} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner4} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner5} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner6} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner7} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner8} alt="" />
-      </div>
-      <div>
+      </SwiperSlide>
+      <SwiperSlide>
       <img className="w-full h-[800px]" src={banner9} alt="" />
-      </div>
-    </Slider>
+      </SwiperSlide>
+
+    </Swiper>
   );
 };
 
