@@ -7,7 +7,7 @@ const NavBar = () => {
     <li><Link to={'/Apartments'}>Apartments</Link></li>
     </>
     return (
-        <div className="navbar bg-orange-100 mb-5 lg:px-32">
+        <div className="navbar bg-orange-100 mb-2 lg:px-32">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">

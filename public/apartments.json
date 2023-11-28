@@ -1,0 +1,73 @@
+[
+    {
+      "apartmentImage": "https://i.ibb.co/yRdSJtz/Apartments-5.webp",
+      "floorNo": 5,
+      "blockName": "A",
+      "apartmentNo": "A101",
+      "rent": 1200
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/K2YMQvb/Apartments-4.webp",
+      "floorNo": 3,
+      "blockName": "B",
+      "apartmentNo": "B203",
+      "rent": 950
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/FqQd4sC/Apartments-3.webp",
+      "floorNo": 7,
+      "blockName": "C",
+      "apartmentNo": "C305",
+      "rent": 1500
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/Ntq3tMP/Apartments-2.webp",
+      "floorNo": 2,
+      "blockName": "D",
+      "apartmentNo": "D102",
+      "rent": 800
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/5vKqjCy/Apartments-1.webp",
+      "floorNo": 6,
+      "blockName": "E",
+      "apartmentNo": "E401",
+      "rent": 1100
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/mDxnTvx/Apartments-6.jpg",
+      "floorNo": 4,
+      "blockName": "F",
+      "apartmentNo": "F204",
+      "rent": 1000
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/9tzmp9m/Apartments-5.jpg",
+      "floorNo": 8,
+      "blockName": "G",
+      "apartmentNo": "G507",
+      "rent": 1700
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/tszjBqV/Apartments-3.jpg",
+      "floorNo": 1,
+      "blockName": "H",
+      "apartmentNo": "H101",
+      "rent": 900
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/zJbS0bg/Apartments-1.jpg",
+      "floorNo": 9,
+      "blockName": "I",
+      "apartmentNo": "I902",
+      "rent": 1300
+    },
+    {
+      "apartmentImage": "https://i.ibb.co/2jYK9tY/Apartments-2.jpg",
+      "floorNo": 5,
+      "blockName": "J",
+      "apartmentNo": "J304",
+      "rent": 1100
+    }
+  ]
+  
