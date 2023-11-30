@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import Apartment from "./Apartment";
+import Headings from "../Shared/Headings/Headings";
 
 const Apartments = () => {
 
@@ -66,6 +67,7 @@ const Apartments = () => {
           4
         </a>
       </div>
+      <Headings mainHeading={'Available Units'} subHeading={'Choose whats best for you'}></Headings>
 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
     {

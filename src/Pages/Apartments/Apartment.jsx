@@ -2,18 +2,21 @@
 
 const Apartment = ({ apartment }) => {
     const{
-        _id,apartmentImage,foorNo,blockName,apartmentNo,rent
+        _id,apartmentImage,floorNo,blockName,apartmentNo,rent
     } = apartment;
-    console.log(_id,apartmentImage,foorNo,blockName,apartmentNo,rent)
+    console.log(_id,apartmentImage,floorNo,blockName,apartmentNo,rent)
     return (
         <div>
            <div className="card lg:card-side bg-base-100 shadow-xl">
-  <figure><img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="Album"/></figure>
+  <figure><img className="w-[400px] h-[300px]" src={apartmentImage} alt="Album"/></figure>
   <div className="card-body">
-    <h2 className="card-title">New album is released!</h2>
-    <p>Click the button to listen on Spotiwhy app.</p>
+    <h2 className="card-title">Available To Rent</h2>
+    <p>Floor No: {floorNo}</p>
+    <p>Block Name: {blockName}</p>
+    <p>Apartment No: {apartmentNo}</p>
+    <p>Rent: {rent}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Listen</button>
+      <button className="btn btn-primary">Agreement</button>
     </div>
   </div>
 </div>
