@@ -10,6 +10,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import auth from "../../assets/firebase/firebase.config";
+import { Helmet } from "react-helmet";
 
 
 
@@ -77,7 +78,10 @@ const SignIn = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <Helmet>
+        <title>SkyNest || Sign In</title>
+      </Helmet>
+      <div className="hero min-h-screen bg-orange-100 mb-2">
         <div className="hero-content flex-col lg:flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">

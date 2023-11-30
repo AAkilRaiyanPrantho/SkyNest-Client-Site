@@ -1,38 +1,53 @@
+import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
+import Apartment from "./Apartment";
 
 const Apartments = () => {
+
+  const {isPending, isError,error, data: apartments} = useQuery({
+    queryKey: ['apartments'],
+    queryFn: async() => {
+      const res = await fetch('http://localhost:5000/apartments');
+      return res.json();
+    }
+  })
+
+  if(isPending){
+    return <span className="loading loading-infinity loading-lg items-center justify-center mx-auto"></span>
+  }
+
+  if(isError){
+    return <h1>Error: {error.message}</h1>
+  }
+
   return (
     <div>
       <Helmet>
         <title>SkyNest || Apartments</title>
       </Helmet>
 
-
-      <h1>This is the Apartment Section</h1>
-
-      
-      <div className="carousel w-full">
+      <div className="carousel w-full lg:h-[800px]">
         <div id="item1" className="carousel-item w-full">
           <img
-            src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+            src="https://i.ibb.co/K2YMQvb/Apartments-4.webp"
             className="w-full"
           />
         </div>
         <div id="item2" className="carousel-item w-full">
           <img
-            src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+            src="https://i.ibb.co/zJbS0bg/Apartments-1.jpg"
             className="w-full"
           />
         </div>
         <div id="item3" className="carousel-item w-full">
           <img
-            src="/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            src="https://i.ibb.co/TWHrbRV/modern-dining-room-ideas-4147451-hero-d6333998f8b34620adfd4d99ac732586.jpg"
             className="w-full"
           />
         </div>
         <div id="item4" className="carousel-item w-full">
           <img
-            src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+            src="https://i.ibb.co/QnV8QxL/Banner-Images-4.jpg"
             className="w-full"
           />
         </div>
@@ -51,6 +66,15 @@ const Apartments = () => {
           4
         </a>
       </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
+    {
+      apartments.map((apartment) => (<Apartment key={apartment._id} apartment={apartment}></Apartment>))
+    }
+    </div>
+
+
+
     </div>
   );
 };
