@@ -3,7 +3,7 @@ const Announcement = ({ announcement }) => {
   console.log(announcementTitle, announcementDetails);
   return (
     <div>
-      <div className="card w-96 bg-orange-500 text-white text-center">
+      <div className="card w-96 bg-orange-500 text-white text-center hover:shadow-2xl shadow-orange-700">
         <div className="card-body">
           <h2 className="card-title">{announcementTitle}</h2>
           <p>{announcementDetails}</p>

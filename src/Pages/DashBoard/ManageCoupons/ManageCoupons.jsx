@@ -1,9 +1,10 @@
+import Headings from "../../Shared/Headings/Headings";
 
 
 const ManageCoupons = () => {
     return (
         <div>
-            <h1>Managing Coupons</h1>
+            <Headings mainHeading={'All Coupons'} subHeading={'See All The Coupons'}></Headings>
         </div>
     );
 };

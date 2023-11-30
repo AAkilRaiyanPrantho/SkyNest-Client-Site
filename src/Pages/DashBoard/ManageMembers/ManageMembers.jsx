@@ -1,9 +1,10 @@
+import Headings from "../../Shared/Headings/Headings";
 
 
 const ManageMembers = () => {
     return (
         <div>
-            <h1>All Members</h1>
+            <Headings mainHeading={'User List'} subHeading={'All Users Can Be Seen Here'}></Headings>
         </div>
     );
 };

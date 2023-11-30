@@ -8,7 +8,7 @@ const Apartments = () => {
   const {isPending, isError,error, data: apartments} = useQuery({
     queryKey: ['apartments'],
     queryFn: async() => {
-      const res = await fetch('http://localhost:5000/apartments');
+      const res = await fetch('https://programming-hero-assignment-12-server.vercel.app/apartments');
       return res.json();
     }
   })
