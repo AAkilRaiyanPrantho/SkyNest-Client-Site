@@ -1,11 +1,39 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProviders/AuthProvider";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+
+import Swal from 'sweetalert2'
+
 
 
 const Apartment = ({ apartment }) => {
+    const axiosPublic = useAxiosPublic();
     const {user} = useContext(AuthContext);
+
     const handleAgreement = () => {
         console.log(_id,apartmentImage,floorNo,blockName,apartmentNo,rent,user.email,user.displayName)
+
+        const agreementInfo = {
+            name: user.displayName,
+            email: user.email,
+            apartmentImage: apartmentImage,floorNo: floorNo,blockName: blockName,apartmentNo: apartmentNo,
+            rent: rent,
+            member: 'No'
+
+          }
+          axiosPublic.post('/agreements',agreementInfo)
+          .then(res => {
+            if(res.data.insertedID){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You Request Has Been Saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+              
+            }
+          })
     }
     const{
         _id,apartmentImage,floorNo,blockName,apartmentNo,rent
