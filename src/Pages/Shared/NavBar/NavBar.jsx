@@ -31,7 +31,7 @@ const NavBar = () => {
         {navOptions}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">SkyNest</a>
+    <p className="font-bold text-xl">SkyNest</p>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -67,7 +67,7 @@ const NavBar = () => {
                   <h1 className="font-bold text-lg uppercase italic">{user ? <span>{user.displayName}</span> : user.email}</h1>
                 </li>
                 <li>
-                  <a>Dashboard</a>
+                  <Link to={'/dashboard'}>Dashboard</Link>
                 </li>
                 <li>
                   <a onClick={handleLogOut}>Logout<FaDoorOpen/></a>

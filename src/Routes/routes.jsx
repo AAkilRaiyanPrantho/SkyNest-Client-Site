@@ -7,6 +7,7 @@ import Apartments from "../Pages/Apartments/Apartments";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
 import ErrorPage from "../Pages/Shared/ErrorPage/Error Page";
+import Dashboard from "../Layouts/Dashboard";
 
 
   export const router = createBrowserRouter([
@@ -33,4 +34,12 @@ import ErrorPage from "../Pages/Shared/ErrorPage/Error Page";
         }
       ]
     },
+    {
+      path: "/dashboard",
+      element: <Dashboard></Dashboard>,
+      errorElement:<ErrorPage></ErrorPage>,
+      children: [
+        
+      ]
+    }
   ]);
