@@ -6,12 +6,14 @@ import Main from "../Layouts/Main";
 import Apartments from "../Pages/Apartments/Apartments";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
+import ErrorPage from "../Pages/Shared/ErrorPage/Error Page";
 
 
   export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
