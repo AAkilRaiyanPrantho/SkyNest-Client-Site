@@ -1,10 +1,16 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProviders/AuthProvider";
 
 
 const Apartment = ({ apartment }) => {
+    const {user} = useContext(AuthContext);
+    const handleAgreement = () => {
+        console.log(_id,apartmentImage,floorNo,blockName,apartmentNo,rent,user.email,user.displayName)
+    }
     const{
         _id,apartmentImage,floorNo,blockName,apartmentNo,rent
     } = apartment;
-    console.log(_id,apartmentImage,floorNo,blockName,apartmentNo,rent)
+    // console.log(_id,apartmentImage,floorNo,blockName,apartmentNo,rent)
     return (
         <div>
            <div className="card lg:card-side bg-base-100 shadow-xl">
@@ -16,7 +22,7 @@ const Apartment = ({ apartment }) => {
     <p>Apartment No: {apartmentNo}</p>
     <p>Rent: {rent}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Agreement</button>
+      <button onClick={handleAgreement} className="btn btn-primary">Agreement</button>
     </div>
   </div>
 </div>

@@ -7,8 +7,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { Helmet } from "react-helmet";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const SignUp = () => {
+
+  const axiosPublic = useAxiosPublic();
+
   const [signUpError, setSignUpError] = useState("");
 
   const [signUpSuccess, setSignUpSuccess] = useState("");
@@ -49,14 +53,26 @@ const SignUp = () => {
       .then((result) => {
         console.log(result.user);
         setSignUpSuccess("Sign Up Successful");
-        notify1();
+        
+        const userInfo = {
+          name: name,
+          email: email
+        }
+        axiosPublic.post('/users',userInfo)
+        .then(res => {
+          if(res.data.insertedID){
+            notify1();
+            console.log('user added to the data base')
+          }
+        })
+        
         e.target.reset();
 
         // Updating Profile
         updateProfile(result.user, {
           displayName: name, photoURL: photo
         })
-        .then( () => console.log('Profile updated'))
+        .then( () => {})
         .catch((error) =>{
           console.error(error);
         })

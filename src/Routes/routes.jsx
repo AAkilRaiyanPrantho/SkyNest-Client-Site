@@ -8,6 +8,8 @@ import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
 import ErrorPage from "../Pages/Shared/ErrorPage/Error Page";
 import Dashboard from "../Layouts/Dashboard";
+import MyProfile from "../Pages/DashBoard/MyProfile/MyProfile";
+import Announcements from "../Pages/DashBoard/Announcements/Announcements";
 
 
   export const router = createBrowserRouter([
@@ -39,7 +41,16 @@ import Dashboard from "../Layouts/Dashboard";
       element: <Dashboard></Dashboard>,
       errorElement:<ErrorPage></ErrorPage>,
       children: [
+        {
+          path: 'myProfile',
+          element: <MyProfile></MyProfile>
+        },
+        {
+          path: 'announcements',
+          element: <Announcements></Announcements>
+        }
         
+
       ]
     }
   ]);
