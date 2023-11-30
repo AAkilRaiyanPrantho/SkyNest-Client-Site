@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { FaBuilding, FaCapsules, FaHouseMedical, FaMicrophone, FaNoteSticky, FaPeopleGroup, FaReceipt, FaUser } from "react-icons/fa6";
 import { Link, Outlet } from "react-router-dom";
+import { AuthContext } from "../Pages/AuthProviders/AuthProvider";
 
 const Dashboard = () => {
-    const isAdmin = true;
+    const { user } = useContext(AuthContext);
   return (
     <div>
       <div className="drawer bg-orange-100 lg:drawer-open">
@@ -22,7 +24,7 @@ const Dashboard = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>{
-            isAdmin? <>
+            user.email === 'prantho98@gmail.com'? <>
             <ul className="menu p-4 w-80 min-h-full text-base-content">
             {/* Sidebar content here */}
             <li>

@@ -10,8 +10,15 @@ const MyProfile = () => {
           <img src={user.photoURL} alt={user.displayName} />
         </figure>
         <div className="card-body w-2/3">
-          <h2 className="card-title text-2xl">{user.displayName}</h2>
+          
+          {
+            user.email === 'prantho98@gmail.com'?<>
+            <h2 className="card-title text-2xl">{user.displayName}</h2>
           <h2 className="card-title text-xl">{user.email}</h2>
+            
+          </>
+          :
+          <>
           <p>
             Floor: NONE
           </p>
@@ -24,6 +31,8 @@ const MyProfile = () => {
           <p>
             Agreement accept date: NONE
           </p>
+          </>
+          }
         </div>
       </div>
     </div>
