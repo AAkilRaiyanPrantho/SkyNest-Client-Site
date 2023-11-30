@@ -7,11 +7,23 @@ import Swal from 'sweetalert2'
 
 
 const Apartment = ({ apartment }) => {
+
+    // current date extraction
+    const currentDate = new Date();
+
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1;
+    const year = currentDate.getFullYear();
+
+    const formattedDate = `${day}/${month}/${year}`;
+
+
+
     const axiosPublic = useAxiosPublic();
     const {user} = useContext(AuthContext);
 
     const handleAgreement = () => {
-        console.log(_id,apartmentImage,floorNo,blockName,apartmentNo,rent,user.email,user.displayName)
+        console.log(_id,apartmentImage,floorNo,blockName,apartmentNo,rent,user.email,user.displayName,formattedDate)
 
         const agreementInfo = {
             name: user.displayName,
@@ -19,7 +31,8 @@ const Apartment = ({ apartment }) => {
             apartmentImage: apartmentImage,floorNo: floorNo,blockName: blockName,apartmentNo: apartmentNo,
             rent: rent,
             member: 'No',
-            status: 'Pending'
+            status: 'Pending',
+            date:formattedDate
 
           }
           axiosPublic.post('/agreements',agreementInfo)

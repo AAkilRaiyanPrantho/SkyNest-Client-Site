@@ -8,6 +8,7 @@ const AgreementRequest = ({ agreement }) => {
     blockName,
     apartmentNo,
     rent,
+    date
   } = agreement;
 
   console.log(
@@ -18,7 +19,8 @@ const AgreementRequest = ({ agreement }) => {
     floorNo,
     blockName,
     apartmentNo,
-    rent
+    rent,
+    date
   );
 
   return (
@@ -28,6 +30,7 @@ const AgreementRequest = ({ agreement }) => {
           <img
             src={apartmentImage}
             alt="car!"
+            className="w-full h-[300px]"
           />
         </figure>
         <div className="card-body">
@@ -37,6 +40,7 @@ const AgreementRequest = ({ agreement }) => {
           <p>Block Name: {blockName}</p>
           <p>Apartment No: {apartmentNo}</p>
           <p>Rent: {rent}</p>
+          <p>Date Requested: {date}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-success">Accept Request</button>
             <button className="btn btn-error">Reject Request</button>
