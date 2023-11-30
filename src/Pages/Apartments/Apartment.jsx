@@ -18,7 +18,8 @@ const Apartment = ({ apartment }) => {
             email: user.email,
             apartmentImage: apartmentImage,floorNo: floorNo,blockName: blockName,apartmentNo: apartmentNo,
             rent: rent,
-            member: 'No'
+            member: 'No',
+            status: 'Pending'
 
           }
           axiosPublic.post('/agreements',agreementInfo)

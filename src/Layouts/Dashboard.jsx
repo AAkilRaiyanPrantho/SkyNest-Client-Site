@@ -1,7 +1,8 @@
-import { FaBuilding, FaHouseMedical, FaNoteSticky, FaUser } from "react-icons/fa6";
+import { FaBuilding, FaCapsules, FaHouseMedical, FaMicrophone, FaNoteSticky, FaPeopleGroup, FaReceipt, FaUser } from "react-icons/fa6";
 import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
+    const isAdmin = true;
   return (
     <div>
       <div className="drawer bg-orange-100 lg:drawer-open">
@@ -20,8 +21,50 @@ const Dashboard = () => {
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
             className="drawer-overlay"
-          ></label>
-          <ul className="menu p-4 w-80 min-h-full text-base-content">
+          ></label>{
+            isAdmin? <>
+            <ul className="menu p-4 w-80 min-h-full text-base-content">
+            {/* Sidebar content here */}
+            <li>
+              <Link to={'/dashboard/myProfile'}>
+                <FaUser></FaUser> Admin Profile</Link>
+            </li>
+            <li>
+              <Link to={'/dashboard/announcements'}>
+                <FaNoteSticky></FaNoteSticky>All Announcements</Link>
+            </li>
+            <li>
+              <Link to={'/dashboard/makeAnnouncements'}>
+                <FaMicrophone></FaMicrophone> Make Announcements</Link>
+            </li>
+            <li>
+              <Link to={'/dashboard/manageMembers'}>
+                <FaPeopleGroup></FaPeopleGroup> Manage Members</Link>
+            </li>
+            <li>
+              <Link to={'/dashboard/manageCoupons'}>
+                <FaCapsules></FaCapsules> Manage Coupons</Link>
+            </li>
+            <li>
+              <Link to={'/dashboard/agreementRequests'}>
+               <FaReceipt></FaReceipt> Agreement Requests</Link>
+            </li>
+            <li>
+            <div className="divider divider-accent"></div>
+            </li>
+            <li>
+              <Link to={'/'}>
+                <FaHouseMedical></FaHouseMedical> Home</Link>
+            </li>
+            <li>
+            <Link to={'/apartments'}>
+                <FaBuilding></FaBuilding> Apartments</Link>
+            </li>
+          </ul>
+            </>
+            :
+            <>
+            <ul className="menu p-4 w-80 min-h-full text-base-content">
             {/* Sidebar content here */}
             <li>
               <Link to={'/dashboard/myProfile'}>
@@ -43,6 +86,9 @@ const Dashboard = () => {
                 <FaBuilding></FaBuilding> Apartments</Link>
             </li>
           </ul>
+            </>
+          }
+          
         </div>
       </div>
     </div>

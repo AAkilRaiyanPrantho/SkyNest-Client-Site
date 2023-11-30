@@ -10,6 +10,11 @@ import ErrorPage from "../Pages/Shared/ErrorPage/Error Page";
 import Dashboard from "../Layouts/Dashboard";
 import MyProfile from "../Pages/DashBoard/MyProfile/MyProfile";
 import Announcements from "../Pages/DashBoard/Announcements/Announcements";
+import PrivateRoute from "./PrivateRoute";
+import MakeAnnouncements from "../Pages/DashBoard/MakeAnnouncements/MakeAnnouncements";
+import ManageMembers from "../Pages/DashBoard/ManageMembers/ManageMembers";
+import ManageCoupons from "../Pages/DashBoard/ManageCoupons/ManageCoupons";
+import AgreementRequests from "../Pages/DashBoard/AgreementRequests/AgreementRequests";
 
 
   export const router = createBrowserRouter([
@@ -38,17 +43,33 @@ import Announcements from "../Pages/DashBoard/Announcements/Announcements";
     },
     {
       path: "/dashboard",
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path: 'myProfile',
-          element: <MyProfile></MyProfile>
+          element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
         },
         {
           path: 'announcements',
-          element: <Announcements></Announcements>
-        }
+          element: <PrivateRoute><Announcements></Announcements></PrivateRoute>
+        },
+        {
+          path: 'makeAnnouncements',
+          element: <PrivateRoute><MakeAnnouncements></MakeAnnouncements></PrivateRoute>
+        },
+        {
+          path: 'manageMembers',
+          element: <PrivateRoute><ManageMembers></ManageMembers></PrivateRoute>
+        },
+        {
+          path: 'manageCoupons',
+          element: <PrivateRoute><ManageCoupons></ManageCoupons></PrivateRoute>
+        },
+        {
+          path: 'agreementRequests',
+          element: <PrivateRoute><AgreementRequests></AgreementRequests></PrivateRoute>
+        },
         
 
       ]
