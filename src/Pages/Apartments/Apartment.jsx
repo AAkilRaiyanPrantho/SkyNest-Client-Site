@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
-import Swal from 'sweetalert2'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const Apartment = ({ apartment }) => {
+  const notify = () => toast('You Request Has Been Saved');
 
     // current date extraction
     const currentDate = new Date();
@@ -37,17 +40,12 @@ const Apartment = ({ apartment }) => {
           }
           axiosPublic.post('/agreements',agreementInfo)
           .then(res => {
-            if(res.data.insertedID){
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "You Request Has Been Saved",
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-              
+            if(res.data.insertedId){
+              console.log('You Request Has Been Saved')
+                notify();
             }
           })
+          .catch(error => console.log(error))
     }
     const{
         _id,apartmentImage,floorNo,blockName,apartmentNo,rent
@@ -65,6 +63,7 @@ const Apartment = ({ apartment }) => {
     <p>Rent: {rent}</p>
     <div className="card-actions justify-end">
       <button onClick={handleAgreement} className="btn btn-primary">Agreement</button>
+      <ToastContainer position="top-right"  />
     </div>
   </div>
 </div>

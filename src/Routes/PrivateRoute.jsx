@@ -7,6 +7,7 @@ import { AuthContext } from "../Pages/AuthProviders/AuthProvider";
 
 
 
+
 const PrivateRoute = ({ children }) => {
     const {user, loading} = useContext(AuthContext);
 

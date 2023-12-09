@@ -1,10 +1,16 @@
-import Swal from "sweetalert2";
+
 import Headings from "../../Shared/Headings/Headings";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const MakeAnnouncements = () => {
     const axiosPublic = useAxiosPublic();
+
+    const notify = () => toast("Announcement Added!");
 
     const handleCreateAnnouncements = (e) => {
     e.preventDefault();
@@ -21,17 +27,12 @@ const MakeAnnouncements = () => {
       }
       axiosPublic.post('/announcements',announcementInfo)
       .then(res => {
-        if(res.data.insertedID){
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "You Request Has Been Saved",
-                showConfirmButton: false,
-                timer: 1500
-              });
-          
+        if(res.data.insertedId){
+          console.log('Announcement Added to Database')
+          notify();
         }
       })
+      .catch(error => console.log(error))
     
   };
     return (
@@ -67,16 +68,14 @@ const MakeAnnouncements = () => {
                 </div>
                 
 
-                
-                
-               
-
                 <div className="form-control mt-6">
                   <button className="btn outline outline-[#ee4747] text-[#ee4747]">
                     Add Announcement
                   </button>
+                  
                 </div>
               </form>
+              <ToastContainer position="top-right"  />
         </div>
     );
 };

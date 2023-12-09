@@ -29,7 +29,7 @@ import AgreementRequests from "../Pages/DashBoard/AgreementRequests/AgreementReq
         },
         {
             path: '/Apartments',
-            element: <Apartments></Apartments>
+            element: <PrivateRoute><Apartments></Apartments></PrivateRoute>
         },
         {
           path: '/signUp',

@@ -131,7 +131,7 @@ const SignIn = () => {
                 <button className="btn outline outline-[#ee4747] text-[#ee4747]">
                   Sign In
                 </button>
-                <ToastContainer />
+                <ToastContainer position="top-right"  />
               </div>
             </form>
             {signInError && <p className="text-red-800">{signInError}</p>}

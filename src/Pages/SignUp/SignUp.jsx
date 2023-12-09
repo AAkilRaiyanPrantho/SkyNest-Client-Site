@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 
 import { useContext, useState } from "react";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { Helmet } from "react-helmet";
@@ -60,11 +62,12 @@ const SignUp = () => {
         }
         axiosPublic.post('/users',userInfo)
         .then(res => {
-          if(res.data.insertedID){
+          if(res.data.insertedId){
             notify1();
             console.log('user added to the data base')
           }
         })
+        .catch(error => console.log(error))
         
         e.target.reset();
 
@@ -181,7 +184,7 @@ const SignUp = () => {
                 </button>
               </div>
             </form>
-            <ToastContainer />
+            <ToastContainer position="top-right"  />
             {signUpError && <p className="text-red-800">{signUpError}</p>}
             {signUpSuccess && <p className="text-green-800">{signUpSuccess}</p>}
           </div>
