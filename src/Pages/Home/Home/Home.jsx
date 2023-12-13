@@ -4,6 +4,7 @@ import Headings from "../../Shared/Headings/Headings";
 import Coupons from "../Coupons/Coupons";
 import About from "../About/About";
 import Neighborhood from "../../Neighborhood/Neighborhood";
+import Complaints from "../../Complaints/Complaints";
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
             {/* <Headings mainHeading={'Where to Find Us?'} subHeading={'Map View of our location'}></Headings> */}
             <Headings mainHeading={'Neighborhood Insights'} subHeading={'Facilities around the Neighborhood'}></Headings>
             <Neighborhood></Neighborhood>
+            <Complaints></Complaints>
             
         </div>
     );
