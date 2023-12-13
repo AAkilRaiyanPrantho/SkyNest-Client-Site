@@ -1,5 +1,6 @@
 import  { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Headings from '../Shared/Headings/Headings';
 
 
 const Complaints = () => {
@@ -24,10 +25,7 @@ const Complaints = () => {
       <div className="hero  bg-base-100 my-4">
         <div className="hero-content flex-col lg:flex-cols-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Got any complaints?</h1>
-            <p className="py-6 text-center text-xl">
-              Lets us know in the Form
-            </p>
+            <Headings mainHeading={'Got any complaints?'} subHeading={'Lets us know in the Form'}></Headings>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body" ref={form} onSubmit={sendEmail}>
